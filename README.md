@@ -16,11 +16,11 @@ Podríamos dividir el repositorio en tres apartados:
 
 ## Índice del repositorio
 
-* [Documentación](https://github.com/adriisotuu/)
+* [Documentación](https://github.com/adriisotuu/proyecto_maquina_quiosco/tree/master/Documentacion)
 
-* [Ejemplos prácticos](https://github.com/adriisotuu/):
-	* [Servicios](https://github.com/adriisotuu/)
-	* [_Targets_](https://github.com/adriisotuu/)
+* [Ejemplos prácticos](https://github.com/adriisotuu/proyecto_maquina_quiosco/tree/master/Ejemplos_practicos):
+	* [Servicios](https://github.com/adriisotuu/proyecto_maquina_quiosco/tree/master/Ejemplos_practicos/Servicios)
+	* [_Targets_](https://github.com/adriisotuu/proyecto_maquina_quiosco/tree/master/Ejemplos_practicos/Targets)
 
-* [Presentación](https://github.com/adriisotuu/)
+* [Presentación](https://github.com/adriisotuu/proyecto_maquina_quiosco/tree/master/Slides)
 
