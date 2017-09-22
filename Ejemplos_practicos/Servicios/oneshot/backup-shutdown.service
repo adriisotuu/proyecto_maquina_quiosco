@@ -1,0 +1,13 @@
+[Unit]
+Description=Servicio que realiza un backup del directorio /home/adri/ (/root/backup-home-adri.tar.gz) al apagar o reiniciar el sistema.
+#Documentation=
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+#No hace nada, sale con un código de estado que indica éxito (success)
+ExecStart=/bin/true
+ExecStop=/bin/backup-shutdown.sh
+
+[Install]
+WantedBy=multi-user.target

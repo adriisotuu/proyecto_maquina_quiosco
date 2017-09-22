@@ -1,0 +1,13 @@
+[Unit]
+Description=Servicio que va anotando la fecha y hora del reinicio del sistema (reboot) en el fichero /root/control_system_shutdown.txt
+#Documentation=
+DefaultDependencies=no
+Before=systemd-reboot.service
+Conflicts=poweroff.target halt.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/hora-reboot.sh
+
+[Install]
+WantedBy=reboot.target

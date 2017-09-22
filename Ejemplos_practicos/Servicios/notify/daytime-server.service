@@ -1,0 +1,13 @@
+[Unit]
+Description=Servidor Daytime
+#Documentation=
+After=network.target
+
+[Service]
+Type=notify
+NotifyAccess=main
+ExecStart=/usr/bin/python /bin/daytime_server.py
+ExecStop=/usr/bin/kill -TERM $MAINPID
+
+[Install]
+WantedBy=multi-user.target

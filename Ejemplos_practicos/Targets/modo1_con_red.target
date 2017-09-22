@@ -1,0 +1,7 @@
+[Unit]
+Description=Modo 1 con red
+# Documentation=man:systemd.special(7)
+Requires=rescue.target
+Wants=NetworkManager.service
+After=rescue.target
+AllowIsolate=yes

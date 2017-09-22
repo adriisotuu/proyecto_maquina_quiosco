@@ -1,0 +1,13 @@
+[Unit]
+Description=Servicio que va anotando la fecha y hora del apagado del sistema (poweroff) en el fichero /root/control_system_shutdown.txt
+#Documentation=
+DefaultDependencies=no
+Before=systemd-poweroff.service
+Conflicts=reboot.target halt.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/hora-poweroff.sh
+
+[Install]
+WantedBy=poweroff.target

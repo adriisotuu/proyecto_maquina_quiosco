@@ -1,0 +1,14 @@
+[Unit]
+Description=mplayer streaming con respawn automático
+#Documentation=
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/bin/mplayer.sh
+ExecStop=/usr/bin/kill -TERM $MAINPID
+Restart=always
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target

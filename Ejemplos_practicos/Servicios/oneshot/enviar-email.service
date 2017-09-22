@@ -1,0 +1,11 @@
+[Unit]
+Description=Servicio que envia un e-mail al iniciar el sistema. El e-mail contiene la hora de inicio del sistema.
+#Documentation=
+After=network.target sendmail.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python /bin/enviar-email.py
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+[Unit]
+Description=Servidor Echo
+#Documentation=
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python /bin/echo_server_multi.py
+ExecStop=/usr/bin/kill -TERM $MAINPID
+
+[Install]
+WantedBy=multi-user.target
