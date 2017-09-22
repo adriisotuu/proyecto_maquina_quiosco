@@ -3,16 +3,16 @@
 
 ## Índice
 
-* [Servicios](https://github.com/adriisotuu/):
-	* [_Simple_](https://github.com/adriisotuu/)
-	* [_Idle_](https://github.com/adriisotuu/)
-	* [_Forking_](https://github.com/adriisotuu/)
-	* [_Notify_](https://github.com/adriisotuu/)
-	* [_Dbus_](https://github.com/adriisotuu/)
-	* [_Oneshot_](https://github.com/adriisotuu/)
+* [Servicios](https://github.com/adriisotuu/proyecto_maquina_quiosco/tree/master/Ejemplos_practicos/Servicios):
+	* [_Simple_](https://github.com/adriisotuu/proyecto_maquina_quiosco/tree/master/Ejemplos_practicos/Servicios/simple)
+	* [_Idle_](https://github.com/adriisotuu/proyecto_maquina_quiosco/tree/master/Ejemplos_practicos/Servicios/idle)
+	* [_Forking_](https://github.com/adriisotuu/proyecto_maquina_quiosco/tree/master/Ejemplos_practicos/Servicios/forking)
+	* [_Notify_](https://github.com/adriisotuu/proyecto_maquina_quiosco/tree/master/Ejemplos_practicos/Servicios/notify)
+	* [_Dbus_](https://github.com/adriisotuu/proyecto_maquina_quiosco/tree/master/Ejemplos_practicos/Servicios/dbus)
+	* [_Oneshot_](https://github.com/adriisotuu/proyecto_maquina_quiosco/tree/master/Ejemplos_practicos/Servicios/oneshot)
 
-* [_Targets_](https://github.com/adriisotuu/):
-	* [Modo 1 con red](https://github.com/adriisotuu/)
+* [_Targets_](https://github.com/adriisotuu/proyecto_maquina_quiosco/tree/master/Ejemplos_practicos/Targets):
+	* [Modo 1 con red](https://github.com/adriisotuu/proyecto_maquina_quiosco/blob/master/Ejemplos_practicos/Targets/modo1_con_red.target)
 
 
 ## Bibliografía

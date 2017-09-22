@@ -1,6 +1,6 @@
 [Unit]
-Description=Servicio que realiza un backup del directorio /home/adri/ (/root/backup-home-adri.tar.gz) al apagar o reiniciar el sistema.
-#Documentation=
+Description=Servicio que realiza un backup del directorio /home/isx41012376/ (/root/backup-home-isx41012376.tar.gz) al apagar o reiniciar el sistema.
+Documentation=https://github.com/adriisotuu/proyecto_maquina_quiosco/tree/master/Documentacion
 
 [Service]
 Type=oneshot

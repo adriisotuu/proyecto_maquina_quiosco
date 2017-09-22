@@ -1,6 +1,6 @@
 [Unit]
 Description=Servicio que va anotando la fecha y hora del apagado del sistema (poweroff) en el fichero /root/control_system_shutdown.txt
-#Documentation=
+Documentation=https://github.com/adriisotuu/proyecto_maquina_quiosco/tree/master/Documentacion
 DefaultDependencies=no
 Before=systemd-poweroff.service
 Conflicts=reboot.target halt.target

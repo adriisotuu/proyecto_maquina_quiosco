@@ -1,6 +1,6 @@
 [Unit]
 Description=Servicio que envia un e-mail al iniciar el sistema. El e-mail contiene la hora de inicio del sistema.
-#Documentation=
+Documentation=https://github.com/adriisotuu/proyecto_maquina_quiosco/tree/master/Documentacion
 After=network.target sendmail.service
 
 [Service]
