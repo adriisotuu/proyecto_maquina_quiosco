@@ -44,7 +44,7 @@ La sección _[Service]_ se utiliza para proporcionar configuración que sólo es
 
 | Directiva | Descripción |
 | :-------: | ----------- |
-| _Type=_ | Explicada detalladamente en este [apartado](https://github.com). |
+| _Type=_ | Explicada detalladamente en este [apartado](https://github.com/adriisotuu/proyecto_maquina_quiosco/blob/master/Documentacion/unidades.md#tipos-de-unidades-service). |
 | _RemainAfterExit=_ | Se utiliza normalmente con el tipo _oneshot_. Indica que el servicio debe considerarse activo incluso después de la salida del proceso. |
 | _PIDFile=_ | Si el tipo de servicio es _forking_, esta directiva se utiliza para establecer la ruta del fichero que debe contener el número de _ID_ de proceso del proceso hijo principal que se debe supervisar. |
 | _BusName=_ | Nombre del bus _D-Bus_ que el servicio intentará adquirir al utilizar el tipo de servicio _dbus_. |
