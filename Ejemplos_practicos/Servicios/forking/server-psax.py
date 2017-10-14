@@ -68,11 +68,11 @@ while True:
 	conn, addr = s.accept()
 	ipClient = addr[0]
 	sys.stderr.write("Conectado por %s\n" %(ipClient))
-	timestamp = time.strftime("%Y/%m/%d %H:%M:%S")
+	timestamp = time.strftime("%Y%m%d_%H:%M:%S")
 	allClients.append((ipClient, timestamp))
 	if ipClient not in differentClients:
 		differentClients.append(ipClient)
-	nameFile = "/tmp/psax-%s-%s.log" %(ipClient, time.strftime("%Y%m%d%H%M"))
+	nameFile = "/tmp/psax-%s-%s.log" %(ipClient, timestamp)
 	fileIn = open(nameFile,'w')
 	while True:
 		dataRecv = conn.recv(1024)
