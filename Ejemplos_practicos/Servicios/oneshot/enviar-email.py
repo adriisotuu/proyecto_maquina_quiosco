@@ -3,6 +3,7 @@
 # Enviar e-mail utilizando librería smtplib
 # enviar-email.py
 # 16/09/2017
+# dnf install sendmail
 # ----------------------------------------------------------------------
 
 import smtplib
