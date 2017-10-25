@@ -13,9 +13,12 @@
 
 * [_Targets_](https://github.com/adriisotuu/proyecto_maquina_quiosco/tree/master/Ejemplos_practicos/Targets):
 	* [Modo 1 con red](https://github.com/adriisotuu/proyecto_maquina_quiosco/blob/master/Ejemplos_practicos/Targets/modo1_con_red.target)
-	* [Aa](https://github.com/adriisotuu/proyecto_maquina_quiosco/blob/master/Ejemplos_practicos/Targets/)
-	* [Máquinas quiosco](https://github.com/adriisotuu/proyecto_maquina_quiosco/blob/master/Ejemplos_practicos/Targets/modo1_con_red.target)
-		* [Modo 1 con red](https://github.com/adriisotuu/proyecto_maquina_quiosco/blob/master/Ejemplos_practicos/Targets/modo1_con_red.target)
+	* [_Target_ base para crear máquinas quiosco](https://github.com/adriisotuu/proyecto_maquina_quiosco/blob/master/Ejemplos_practicos/Targets/quiosco_target/quiosco.target)
+	* [Máquinas quiosco](https://github.com/adriisotuu/proyecto_maquina_quiosco/blob/master/Ejemplos_practicos/Targets/Maquinas_quiosco):
+		* [_Firefox_](https://github.com/adriisotuu/proyecto_maquina_quiosco/blob/master/Ejemplos_practicos/Targets/Maquinas_quiosco/Firefox)
+		* [_Geany_](https://github.com/adriisotuu/proyecto_maquina_quiosco/blob/master/Ejemplos_practicos/Targets/Maquinas_quiosco/Geany)
+		* [_Maps_](https://github.com/adriisotuu/proyecto_maquina_quiosco/blob/master/Ejemplos_practicos/Targets/Maquinas_quiosco/Maps)
+		* [_X11-apps_](https://github.com/adriisotuu/proyecto_maquina_quiosco/blob/master/Ejemplos_practicos/Targets/Maquinas_quiosco/X11-apps)
 
 
 ## Bibliografía
