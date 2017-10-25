@@ -140,7 +140,9 @@ WantedBy=multi-user.target
 
 ```
 [Unit]
-Description=Servidor que genera ficheros .log en /tmp/ que contienen el output de la orden ps ax. Formato: ps-IPCliente-Timestamp.log
+Description=Servidor que genera ficheros .log en /tmp/ 
+que contienen el output de la orden ps ax. Formato: 
+ps-IPCliente-Timestamp.log
 Documentation=https://github.com/adriisotuu
 After=network.target
 
@@ -190,7 +192,8 @@ Un ejemplo de este tipo de servicio es _NetworkManager.service_.
 
 ```
 [Unit]
-Description=Servicio que envia un e-mail al iniciar el sistema. El e-mail contiene la hora de inicio del sistema.
+Description=Servicio que envia un e-mail al iniciar el sistema. 
+El e-mail contiene la hora de inicio del sistema.
 Documentation=https://github.com/adriisotuu
 After=network.target sendmail.service
 
@@ -261,7 +264,9 @@ Es posible iniciar todas las unidades asociadas con un _target_ y detener todas 
 
 ```
 [Unit]
-Description=Servicio que va anotando la fecha y hora del apagado del sistema (poweroff) en el fichero /root/control_system_shutdown.txt
+Description=Servicio que va anotando la fecha y hora 
+del apagado del sistema (poweroff) en el fichero 
+/root/control_system_shutdown.txt
 Documentation=https://github.com/adriisotuu
 DefaultDependencies=no
 Before=systemd-poweroff.service
@@ -281,7 +286,9 @@ WantedBy=poweroff.target
 
 ```
 [Unit]
-Description=Servicio que va anotando la fecha y hora del reinicio del sistema (reboot) en el fichero /root/control_system_shutdown.txt
+Description=Servicio que va anotando la fecha y hora 
+del reinicio del sistema (reboot) en el fichero 
+/root/control_system_shutdown.txt
 Documentation=https://github.com/adriisotuu
 DefaultDependencies=no
 Before=systemd-reboot.service
@@ -301,7 +308,9 @@ WantedBy=reboot.target
 
 ```
 [Unit]
-Description=Servicio que realiza un backup del directorio /home/isx41012376/ (/root/backup-home-isx41012376.tar.gz) al apagar o reiniciar el sistema.
+Description=Servicio que realiza un backup del directorio 
+/home/isx41012376/ (/root/backup-home-isx41012376.tar.gz) 
+al apagar o reiniciar el sistema.
 Documentation=https://github.com/adriisotuu
 
 [Service]
@@ -321,7 +330,9 @@ WantedBy=multi-user.target
 
 ```
 [Unit]
-Description=Servicio que realiza un backup del directorio /home/isx41012376/ (/root/backup-home-isx41012376.tar.gz) al apagar o reiniciar el sistema.
+Description=Servicio que realiza un backup del directorio 
+/home/isx41012376/ (/root/backup-home-isx41012376.tar.gz) 
+al apagar o reiniciar el sistema.
 Documentation=https://github.com/adriisotuu
 DefaultDependencies=no
 Before=systemd-poweroff.service systemd-reboot.service
@@ -498,5 +509,156 @@ RestartSec=10s
 
 [Install]
 WantedBy=multi-user.target
+```
+
+---
+
+## Modo 1 con red
+
+```
+[Unit]
+Description=Modo 1 con red.
+Documentation=https://github.com/adriisotuu
+Requires=rescue.target
+Wants=NetworkManager.service
+After=rescue.target
+AllowIsolate=yes
+```
+
+---
+
+## _quiosco.target_
+
+```
+[Unit]
+Description=Target base para la creación de máquinas 
+quiosco (auto-login usuario quiosco).
+Documentation=https://github.com/adriisotuu
+Requires=sysinit.target
+Wants=dbus.service getty.target plymouth-quit.service 
+plymouth-quit-wait.service systemd-logind.service 
+systemd-user-sessions.service
+After=sysinit.target
+AllowIsolate=yes
+```
+
+---
+
+## _Xwrapper.config_
+
+```
+allowed_users=anybody
+needs_root_rights=yes
+```
+
+
+## _.bash\_profile_
+
+```
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+PATH=$PATH:$HOME/.local/bin:$HOME/bin
+
+export PATH
+
+systemctl --user start startx@$(echo $XDG_VTNR).service
+```
+
+---
+
+## _startx@.service_
+
+```
+[Unit]
+Description=Startx con respawn automático.
+Documentation=https://github.com/adriisotuu
+Requires=startx@%i.socket
+After=sysinit.target startx@%i.socket
+
+[Service]
+Type=simple
+ExecStart=/bin/startx -- :%i -nolisten tcp vt%i
+ExecStop=/usr/bin/kill -TERM $MAINPID
+Restart=always
+```
+
+---
+
+## _quiosco\_firefox.target_
+
+```
+[Unit]
+Description=Quiosco Firefox
+Documentation=https://github.com/adriisotuu
+Requires=quiosco.target
+Wants=NetworkManager.service
+After=quiosco.target
+AllowIsolate=yes
+
+[Install]
+Alias=runlevel2.target
+```
+
+---
+
+## _firefox.service_
+
+```
+[Unit]
+Description=Añade cliente gráfico Firefox en segundo plano 
+en /home/quiosco/.xinitrc
+Documentation=https://github.com/adriisotuu
+Before=window_manager.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/firefox_xinitrc.sh
+
+[Install]
+WantedBy=quiosco_firefox.target
+```
+
+
+## _firefox\_xinitrc.sh_
+
+```
+#!/bin/sh
+
+echo "firefox -P -new-tab https://www.google.es &" > 
+/home/quiosco/.xinitrc
+```
+
+---
+
+## _window\_manager.service_
+
+```
+[Unit]
+Description=Añade Window Manager en primer plano 
+en /home/quiosco/.xinitrc
+Documentation=https://github.com/adriisotuu
+
+[Service]
+Type=oneshot
+ExecStart=/bin/wm_xinitrc.sh
+
+[Install]
+WantedBy=quiosco_firefox.target
+```
+
+
+## _wm\_xinitrc.sh_
+
+```
+#!/bin/sh
+
+echo "exec mutter" >> /home/quiosco/.xinitrc
 ```
 
