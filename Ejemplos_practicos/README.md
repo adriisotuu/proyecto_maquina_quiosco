@@ -13,6 +13,9 @@
 
 * [_Targets_](https://github.com/adriisotuu/proyecto_maquina_quiosco/tree/master/Ejemplos_practicos/Targets):
 	* [Modo 1 con red](https://github.com/adriisotuu/proyecto_maquina_quiosco/blob/master/Ejemplos_practicos/Targets/modo1_con_red.target)
+	* [Aa](https://github.com/adriisotuu/proyecto_maquina_quiosco/blob/master/Ejemplos_practicos/Targets/)
+	* [Máquinas quiosco](https://github.com/adriisotuu/proyecto_maquina_quiosco/blob/master/Ejemplos_practicos/Targets/modo1_con_red.target)
+		* [Modo 1 con red](https://github.com/adriisotuu/proyecto_maquina_quiosco/blob/master/Ejemplos_practicos/Targets/modo1_con_red.target)
 
 
 ## Bibliografía
