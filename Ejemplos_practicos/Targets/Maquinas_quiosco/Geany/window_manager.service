@@ -1,0 +1,10 @@
+[Unit]
+Description=Añade Window Manager en primer plano en /home/quiosco/.xinitrc
+Documentation=https://github.com/adriisotuu/proyecto_maquina_quiosco/tree/master/Documentacion
+
+[Service]
+Type=oneshot
+ExecStart=/bin/wm_xinitrc.sh
+
+[Install]
+WantedBy=quiosco_firefox.target

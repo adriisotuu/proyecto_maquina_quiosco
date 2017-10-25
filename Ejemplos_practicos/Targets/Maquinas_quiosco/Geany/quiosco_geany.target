@@ -1,7 +1,7 @@
 [Unit]
-Description=Modo 1 con red.
+Description=Quiosco Geany
 Documentation=https://github.com/adriisotuu/proyecto_maquina_quiosco/tree/master/Documentacion
-Requires=rescue.target
+Requires=quiosco.target
 Wants=NetworkManager.service
-After=rescue.target
+After=quiosco.target
 AllowIsolate=yes

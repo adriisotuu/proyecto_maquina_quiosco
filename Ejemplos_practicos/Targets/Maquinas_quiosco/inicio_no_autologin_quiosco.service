@@ -1,0 +1,11 @@
+[Unit]
+Description=Elimina el inicio de sesión automático del usuario quiosco (si existe) en el inicio del sistema.
+Documentation=https://github.com/adriisotuu/proyecto_maquina_quiosco/tree/master/Documentacion
+After=sysinit.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/no_autologin.sh
+
+[Install]
+WantedBy=multi-user.target

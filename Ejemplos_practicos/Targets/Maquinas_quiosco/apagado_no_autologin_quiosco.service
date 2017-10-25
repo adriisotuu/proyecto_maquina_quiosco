@@ -1,0 +1,12 @@
+[Unit]
+Description=Elimina el inicio de sesión automático del usuario quiosco (si existe) en el apagado del sistema.
+Documentation=https://github.com/adriisotuu/proyecto_maquina_quiosco/tree/master/Documentacion
+DefaultDependencies=no
+Before=systemd-poweroff.service systemd-reboot.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/no_autologin.sh
+
+[Install]
+WantedBy=shutdown.target

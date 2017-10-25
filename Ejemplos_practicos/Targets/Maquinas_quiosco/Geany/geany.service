@@ -1,0 +1,11 @@
+[Unit]
+Description=Añade cliente gráfico Geany en segundo plano en /home/quiosco/.xinitrc
+Documentation=https://github.com/adriisotuu/proyecto_maquina_quiosco/tree/master/Documentacion
+Before=window_manager.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/geany_xinitrc.sh
+
+[Install]
+WantedBy=quiosco_geany.target

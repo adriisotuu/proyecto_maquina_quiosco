@@ -1,0 +1,11 @@
+[Unit]
+Description=Startx con respawn automático.
+Documentation=https://github.com/adriisotuu/proyecto_maquina_quiosco/tree/master/Documentacion
+Requires=startx@%i.socket
+After=sysinit.target startx@%i.socket
+
+[Service]
+Type=simple
+ExecStart=/bin/startx -- :%i -nolisten tcp vt%i
+ExecStop=/usr/bin/kill -TERM $MAINPID
+Restart=always

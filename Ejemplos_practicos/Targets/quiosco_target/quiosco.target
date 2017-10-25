@@ -1,0 +1,7 @@
+[Unit]
+Description=Target base para la creación de máquinas quiosco (auto-login usuario quiosco).
+Documentation=https://github.com/adriisotuu/proyecto_maquina_quiosco/tree/master/Documentacion
+Requires=sysinit.target
+Wants=dbus.service getty.target plymouth-quit.service plymouth-quit-wait.service systemd-logind.service systemd-user-sessions.service
+After=sysinit.target
+AllowIsolate=yes
