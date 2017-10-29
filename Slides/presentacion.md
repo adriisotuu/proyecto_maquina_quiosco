@@ -54,7 +54,7 @@ Los archivos de configuración de las unidades se cargan desde dos ubicaciones. 
 
 * _/usr/lib/systemd/system/_: unidades proporcionadas por paquetes instalados.
 
-* _/etc/systemd/system/_: unidades instaladas por el administrador del sistema.
+6.3* _/etc/systemd/system/_: unidades instaladas por el administrador del sistema.
 
 ---
 
@@ -90,11 +90,11 @@ Los archivos de configuración de las unidades se cargan desde dos ubicaciones. 
 
 La estructura interna de los ficheros de unidad se organiza en secciones.
 
-1. La sección _[Unit]_: Se utiliza generalmente para definir _metadata_ para la unidad y configurar la relación de la unidad con otras unidades.
+1. La sección _[Unit]_
 
-2. La sección _[Install]_: Esta sección es opcional y se utiliza para definir el comportamiento de una unidad si está habilitada o deshabilitada. Al habilitar una unidad se marca para que se inicie automáticamente al arrancar.
+2. La sección _[Install]_ (opcional)
 
-3. La sección _[Service]_: Entre las dos secciones anteriores, todo tipo de unidad también puede implementar su propia sección, como _[Service]_ en unidades de servicio o _[Socket]_ en unidades _socket_.
+3. La sección _[Service]_/_[Socket]_
 
 ---
 
