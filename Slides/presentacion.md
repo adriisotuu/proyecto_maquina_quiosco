@@ -309,8 +309,8 @@ WantedBy=reboot.target
 ```
 [Unit]
 Description=Servicio que realiza un backup del directorio 
-/home/isx41012376/ (/root/backup-home-isx41012376.tar.gz) 
-al apagar o reiniciar el sistema.
+/boot (/root/backup-boot_dir.tar.gz) al apagar o reiniciar 
+el sistema.
 Documentation=https://github.com/adriisotuu
 
 [Service]
@@ -331,8 +331,8 @@ WantedBy=multi-user.target
 ```
 [Unit]
 Description=Servicio que realiza un backup del directorio 
-/home/isx41012376/ (/root/backup-home-isx41012376.tar.gz) 
-al apagar o reiniciar el sistema.
+/boot (/root/backup-boot_dir.tar.gz) al apagar o reiniciar 
+el sistema.
 Documentation=https://github.com/adriisotuu
 DefaultDependencies=no
 Before=systemd-poweroff.service systemd-reboot.service
