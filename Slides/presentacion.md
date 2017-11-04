@@ -54,7 +54,7 @@ Los archivos de configuración de las unidades se cargan desde dos ubicaciones. 
 
 * _/usr/lib/systemd/system/_: unidades proporcionadas por paquetes instalados.
 
-6.3* _/etc/systemd/system/_: unidades instaladas por el administrador del sistema.
+* _/etc/systemd/system/_: unidades instaladas por el administrador del sistema.
 
 ---
 
@@ -92,9 +92,9 @@ La estructura interna de los ficheros de unidad se organiza en secciones.
 
 1. La sección _[Unit]_
 
-2. La sección _[Install]_ (opcional)
+2. La sección _[Service]_/_[Socket]_
 
-3. La sección _[Service]_/_[Socket]_
+3. La sección _[Install]_ (opcional)
 
 ---
 
@@ -180,9 +180,9 @@ WantedBy=multi-user.target
 
 ## _Type=dbus_
 
-El servicio se considera listo cuando el _BusName=_ especificado aparece en el bus de sistema _DBus_.
-
 _D-Bus_ (_Desktop Bus_) es un sistema de comunicación entre procesos (_IPC_) para aplicaciones de software con el fin de comunicarse entre sí.
+
+El servicio se considera listo cuando el _BusName=_ especificado aparece en el bus de sistema _DBus_.
 
 Un ejemplo de este tipo de servicio es _NetworkManager.service_.
 
@@ -416,20 +416,6 @@ Con este método podemos añadir _gettys_ preactivados, los cuales serán ejecut
 
 ---
 
-## Los ficheros _drop-in_
-
-Existen dos maneras seguras de modificar una unidad sin tocar el fichero original:
-
-1. Crear un nuevo fichero de unidad que reemplace la unidad original.
-
-2. Crear fragmentos _drop-in_ que se aplican encima de la unidad original.
-
-`# systemctl edit unidad`
-
-_systemd_ analizará los archivos _*.conf_ y los aplicará antes que los de la unidad original.
-
----
-
 ## La unidad _user@.service_
 
 - El módulo _pam_systemd.so_ inicia automáticamente una instancia `systemd --user` cuando el usuario inicia sesión por primera vez, iniciando _user@.service_.
@@ -453,22 +439,6 @@ _systemd_ analizará los archivos _*.conf_ y los aplicará antes que los de la u
 3. _~/.local/share/systemd/user/_ donde pertenecen las unidades de paquetes que se han instalado en el directorio _/home/_ del usuario.
 
 4. _/usr/lib/systemd/user/_ donde pertenecen las unidades provistas por paquetes instalados.
-
----
-
-## Variables de entorno
-
-La instancia de usuario de _systemd_ no hereda ninguna de las variables de entorno establecidas en lugares como _.bashrc_, etc. 
-
-Hay varias maneras de establecer variables de entorno para la instancia de usuario _systemd_:
-
-1. Para usuarios con un directorio `$HOME`, utilizamos la opción _DefaultEnvironment_ en _~/.config/systemd/user.conf_.
-
-2. Con la opción _DefaultEnvironment_ en el fichero _/etc/systemd/user.conf_.
-
-3. Agregando un fichero de configuración _drop-in_ en _/etc/systemd/system/user@.service.d/_.
-	
-4. En cualquier momento, utilizar `systemctl --user set-environment` o `systemctl --user import-environment`.
 
 ---
 
